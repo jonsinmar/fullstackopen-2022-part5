@@ -1,9 +1,10 @@
 import Blog from "./Blog";
-const BlogsList = ({ blogs }) => {
+const BlogsList = ({ blogs, likeBlog, removeBlog }) => {
+  
   return (
     <>
-      {blogs.map((blog) => (
-        <Blog key={blog.id} blog={blog} />
+      {blogs.sort((blogA,blogB)=>blogB.likes - blogA.likes).map((blog) => (
+        <Blog key={blog.id} blog={blog} likeBlog={likeBlog} removeBlog={removeBlog}/>
       ))}
     </>
   );
