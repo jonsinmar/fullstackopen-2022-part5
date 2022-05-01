@@ -120,7 +120,7 @@ const App = () => {
       try {
         await blogService.removeBlog(id);
         setMessage({
-          text: `blog removed`,
+          text: "blog removed",
           type: "success",
         });
         const newBlogs = blogs.filter((stateBlog) => stateBlog.id !== id);
